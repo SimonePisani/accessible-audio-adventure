@@ -87,7 +87,7 @@ def InitializeScenes():
             "focus_audio": ["Audios/_gameScene/_scenes/3490/focus.mp3"]
         },
         "5155": {
-            "linked_scenes": ["1225, 5347"],
+            "linked_scenes": ["1225", "5347"],
             "has_help": True,
             "narration_audio": ["Audios/_gameScene/_scenes/5155/narration.mp3"],
             "focus_audio": ["Audios/_gameScene/_scenes/5155/focus.mp3"],
