@@ -1,149 +1,152 @@
 # Accessible Audio Adventure
 
-Python audio-first interactive experience designed for visually impaired users, controlled through hand gestures detected via webcam.
+An interactive audio-based experience designed for visually impaired users, enabling navigation through a narrative environment using **hand gestures and real-time audio feedback**.
+
+This project explores an alternative interaction paradigm that replaces traditional graphical interfaces with **gesture-based input and spatial audio output**.
 
 ---
 
-## 🚀 Overview
+## Overview
 
-Accessible Audio Adventure is an experimental interactive system designed to provide a fully non-visual user experience.
+Accessible Audio Adventure is designed as an experimental system where users interact without relying on visual elements.
 
-The application allows users to navigate an audio-based adventure using only sound and simple hand gestures detected via webcam.
-Instead of relying on a graphical interface, all interactions are guided through audio narration, feedback, and instructions.
+Instead of a graphical interface, the system provides:
 
-This project explores accessibility-oriented interaction design by combining audio interfaces with computer vision.
+* gesture-based navigation
+* continuous audio feedback
+* scene-based progression through an interactive story
 
----
-
-## ✨ Features
-
-* 🎧 Audio-first interaction (no visual UI required)
-* ✋ Hand gesture input via webcam
-* 🔢 Finger counting using computer vision
-* 🎮 Scene-based interactive navigation
-* 🔊 Audio narration, feedback, and instructions
-* 💡 Contextual help system
-* 🔐 Code-based scene transitions
-* 🧩 Modular architecture (scenes, session, input mapping)
+The goal is to create an experience that is fully accessible to visually impaired users while remaining intuitive and engaging.
 
 ---
 
-## 🧠 How It Works
+## Motivation
 
-The user interacts with the system by showing a number of fingers to the webcam.
+Most applications rely heavily on visual interfaces, limiting accessibility for users with visual impairments.
 
-The system:
+This project explores a different approach:
 
-1. Detects the number of fingers using computer vision
-2. Waits for a stable input
-3. Maps the number to an action depending on the current scene
+> replacing visual interaction with a combination of gesture recognition and audio feedback
 
-Possible actions include:
-
-* navigating menus
-* replaying instructions
-* triggering narration or descriptions
-* entering numeric codes
-* accessing help
-* switching between scenes
+The system is intentionally designed **without a traditional GUI** to investigate alternative user interaction models.
 
 ---
 
-## 🛠️ Tech Stack
+## Interaction Model
 
-* Python
-* OpenCV
-* MediaPipe
-* NumPy
-* TensorFlow
-* playsound
+The interaction is based on a simple but effective loop:
 
----
+1. The user performs a hand gesture
+2. The system detects the gesture in real-time
+3. A corresponding action is triggered
+4. Audio feedback communicates the result
 
-## 📁 Project Structure
+Example interactions:
 
-```text
-.
-├── Audios/                         # Audio files for narration and feedback
-├── BasicFingerCountHandler.py      # Input handling via gestures
-├── BasicScene.py                   # Scene definitions and behavior
-├── BasicSceneInitializer.py        # Scene graph and story logic
-├── BasicSceneMapping.py            # Input → action mapping
-├── BasicSession.py                 # Session and game state management
-├── FingerCount.py                  # Finger detection (MediaPipe + OpenCV)
-├── main.py                         # Entry point
-├── requirements.txt                # Dependencies
-└── progetto_librogame.bat          # Windows launcher
-```
+* Open hand → move forward in the story
+* Closed hand → interact with an element
+* Directional gesture → change path or scene
+
+Audio feedback is used to:
+
+* indicate state changes
+* guide navigation
+* provide contextual information
 
 ---
 
-## ⚙️ Installation
+## User Experience
 
-Clone the repository:
+The system is designed to be fully usable without visual feedback.
 
-```bash
-git clone https://github.com/SimonePisani/accessible-audio-adventure.git
-cd accessible-audio-adventure
-```
+Users rely entirely on:
 
-Install dependencies:
+* **audio cues** for orientation and feedback
+* **gestures** for interaction
 
-```bash
-pip install -r requirements.txt
-```
+This creates an experience where:
 
----
-
-## ▶️ Usage
-
-Run the application:
-
-```bash
-python main.py
-```
-
-Make sure that:
-
-* a webcam is available
-* audio output is enabled
-* the `Audios/` folder is present
+* navigation is intuitive
+* feedback is immediate
+* interaction does not depend on sight
 
 ---
 
-## ♿ Accessibility Focus
+## Features
 
-This project was designed to explore alternative interaction models for users with visual impairments.
-
-Key principles:
-
-* audio replaces visual interfaces
-* gesture input replaces keyboard/mouse
-* repeated feedback ensures usability
-* minimal reliance on visual elements
+* 🎧 Audio-driven interaction system
+* ✋ Real-time hand gesture recognition
+* 🧭 Scene-based navigation
+* 🔊 Continuous feedback loop
+* ♿ Accessibility-focused design
 
 ---
 
-## 📌 Notes
+## Tech Stack
 
-This is an experimental project developed in an academic context, focused on:
-
-* accessibility
-* human-computer interaction
-* computer vision
-
----
-
-## 🚧 Future Improvements
-
-* Add speech recognition as an alternative input
-* Improve gesture detection robustness
-* External configuration for scenes and audio
-* Packaging as executable (.exe)
-* UI for hybrid interaction (optional)
+* **Python**
+* **OpenCV** (camera input)
+* **MediaPipe** (gesture detection)
+* **NumPy**
+* **TensorFlow** (gesture recognition support)
+* **playsound** (audio output)
 
 ---
 
-## 👨‍💻 Author
+## System Architecture
 
-Simone Pisani
+The system is structured around three main components:
+
+* **Input Layer** → gesture detection via webcam
+* **Processing Layer** → gesture interpretation and scene logic
+* **Output Layer** → audio feedback and narration
+
+---
+
+## Example Interaction
+
+A typical interaction cycle:
+
+* The user raises their hand in front of the camera
+* The system detects the gesture using MediaPipe
+* The gesture is mapped to an action
+* A new scene is triggered
+* Audio feedback communicates the transition
+
+This loop allows continuous interaction without requiring visual cues.
+
+---
+
+## Challenges
+
+* Designing interaction without visual feedback
+* Mapping gestures to intuitive actions
+* Ensuring real-time responsiveness
+* Providing meaningful audio feedback
+* Handling noisy or inconsistent input from gesture detection
+
+---
+
+## Notes
+
+* This project was originally developed in a university environment
+* The focus is on **interaction design and accessibility**, rather than UI/UX in the traditional sense
+* The absence of a graphical interface is intentional
+
+---
+
+## Future Improvements
+
+* Improved gesture recognition accuracy
+* More complex interaction patterns
+* Enhanced audio design (spatial audio, richer feedback)
+* Support for additional accessibility features
+
+---
+
+## Key Takeaways
+
+* Designed an interaction system without relying on visual interfaces
+* Applied computer vision for real-time gesture recognition
+* Explored accessibility-first design principles
+* Built a complete input → processing → feedback pipeline
